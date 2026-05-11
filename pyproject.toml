@@ -1,0 +1,21 @@
+[project]
+name = "edunexus"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.136.1",
+    "langchain>=1.2.17",
+    "langchain-anthropic>=1.4.3",
+    "langchain-google-genai>=4.2.2",
+    "langchain-groq>=1.1.2",
+    "langchain-ollama>=1.1.0",
+    "langchain-openai>=1.2.1",
+    "langgraph>=1.1.10",
+    "langsmith>=0.8.2",
+    "mcp>=1.27.0",
+    "pydantic>=2.13.4",
+    "python-dotenv>=1.2.2",
+    "uvicorn>=0.46.0",
+]
