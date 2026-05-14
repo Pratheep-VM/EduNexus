@@ -66,7 +66,7 @@ resource "aws_security_group" "k3s_sg" {
 # EC2 Instance
 resource "aws_instance" "k3s_server" {
   ami           = "ami-0c7217cdde317cfec" 
-  instance_type = "t2.micro"              
+  instance_type = "t3.micro"              
 
   vpc_security_group_ids = [aws_security_group.k3s_sg.id]
 
