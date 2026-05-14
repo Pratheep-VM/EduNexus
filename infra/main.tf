@@ -1,4 +1,10 @@
 terraform {
+  backend "s3" {
+    bucket = "edunexus-terraform-state-pradeep" 
+    key    = "edunexus/terraform.tfstate"
+    region = "us-east-1"
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
