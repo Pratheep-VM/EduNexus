@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: edunexus-ingress
+  annotations:
+    # If using NGINX ingress controller (standard on K3s)
+    kubernetes.io/ingress.class: "nginx"
+    # To enable HTTPS later with Let's Encrypt
+    # cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: edunexus-service
+            port:
+              number: 80

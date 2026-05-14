@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edunexus-deployment
+  labels:
+    app: edunexus
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: edunexus
+  template:
+    metadata:
+      labels:
+        app: edunexus
+    spec:
+      containers:
+      - name: edunexus-container
+        image: 123456789012.dkr.ecr.us-east-1.amazonaws.com/edunexus:latest 
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+        env:
+        - name: GOOGLE_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: edunexus-secrets
+              key: google-api-key
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 10
+          periodSeconds: 15

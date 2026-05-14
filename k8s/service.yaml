@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: edunexus-service
+spec:
+  selector:
+    app: edunexus
+  ports:
+    - protocol: TCP
+      port: 80        # The port exposed inside the K8s cluster
+      targetPort: 8000 # The port your FastAPI container is listening on
+  type: ClusterIP      # Keeps it internal to the cluster for security
