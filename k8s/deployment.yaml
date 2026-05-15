@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: edunexus-container
-        image: 123456789012.dkr.ecr.us-east-1.amazonaws.com/edunexus:latest 
+        image: 740820043343.dkr.ecr.us-east-1.amazonaws.com/edunexus:sha-055364c057df0886d8479e75c0652b78815ed95b
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
