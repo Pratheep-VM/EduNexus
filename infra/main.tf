@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "edunexus-terraform-state-pradeep" 
+    bucket = "edunexus-terraform-state-piradeep" 
     key    = "edunexus/terraform.tfstate"
     region = "us-east-1"
   }
