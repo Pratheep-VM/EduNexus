@@ -1,0 +1,14 @@
+.venv
+.git
+.gitignore
+__pycache__
+*.pyc
+.env
+.python-version
+
+# Infrastructure & CI/CD Files (We don't want these inside the Python container)
+.github/
+infra/
+k8s/
+.terraform/
+*.tfstate*
